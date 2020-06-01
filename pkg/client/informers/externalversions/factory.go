@@ -23,9 +23,9 @@ import (
 	sync "sync"
 	time "time"
 
-	versioned "github.com/trstringer/k8s-controller-custom-resource/pkg/client/clientset/versioned"
-	internalinterfaces "github.com/trstringer/k8s-controller-custom-resource/pkg/client/informers/externalversions/internalinterfaces"
-	myresource "github.com/trstringer/k8s-controller-custom-resource/pkg/client/informers/externalversions/myresource"
+	versioned "github.com/chendotjs/k8s-controller-custom-resource/pkg/client/clientset/versioned"
+	internalinterfaces "github.com/chendotjs/k8s-controller-custom-resource/pkg/client/informers/externalversions/internalinterfaces"
+	myresource "github.com/chendotjs/k8s-controller-custom-resource/pkg/client/informers/externalversions/myresource"
 	v1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	runtime "k8s.io/apimachinery/pkg/runtime"
 	schema "k8s.io/apimachinery/pkg/runtime/schema"
@@ -172,9 +172,9 @@ type SharedInformerFactory interface {
 	ForResource(resource schema.GroupVersionResource) (GenericInformer, error)
 	WaitForCacheSync(stopCh <-chan struct{}) map[reflect.Type]bool
 
-	Trstringer() myresource.Interface
+	Chendotjs() myresource.Interface
 }
 
-func (f *sharedInformerFactory) Trstringer() myresource.Interface {
+func (f *sharedInformerFactory) Chendotjs() myresource.Interface {
 	return myresource.New(f, f.namespace, f.tweakListOptions)
 }

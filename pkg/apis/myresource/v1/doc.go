@@ -1,4 +1,4 @@
 // +k8s:deepcopy-gen=package
-// +groupName=trstringer.com
+// +groupName=chendotjs.com
 
 package v1

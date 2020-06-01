@@ -19,28 +19,28 @@ limitations under the License.
 package v1
 
 import (
-	v1 "github.com/trstringer/k8s-controller-custom-resource/pkg/apis/myresource/v1"
-	"github.com/trstringer/k8s-controller-custom-resource/pkg/client/clientset/versioned/scheme"
+	v1 "github.com/chendotjs/k8s-controller-custom-resource/pkg/apis/myresource/v1"
+	"github.com/chendotjs/k8s-controller-custom-resource/pkg/client/clientset/versioned/scheme"
 	serializer "k8s.io/apimachinery/pkg/runtime/serializer"
 	rest "k8s.io/client-go/rest"
 )
 
-type TrstringerV1Interface interface {
+type ChendotjsV1Interface interface {
 	RESTClient() rest.Interface
 	MyResourcesGetter
 }
 
-// TrstringerV1Client is used to interact with features provided by the trstringer.com group.
-type TrstringerV1Client struct {
+// ChendotjsV1Client is used to interact with features provided by the chendotjs.com group.
+type ChendotjsV1Client struct {
 	restClient rest.Interface
 }
 
-func (c *TrstringerV1Client) MyResources(namespace string) MyResourceInterface {
+func (c *ChendotjsV1Client) MyResources(namespace string) MyResourceInterface {
 	return newMyResources(c, namespace)
 }
 
-// NewForConfig creates a new TrstringerV1Client for the given config.
-func NewForConfig(c *rest.Config) (*TrstringerV1Client, error) {
+// NewForConfig creates a new ChendotjsV1Client for the given config.
+func NewForConfig(c *rest.Config) (*ChendotjsV1Client, error) {
 	config := *c
 	if err := setConfigDefaults(&config); err != nil {
 		return nil, err
@@ -49,12 +49,12 @@ func NewForConfig(c *rest.Config) (*TrstringerV1Client, error) {
 	if err != nil {
 		return nil, err
 	}
-	return &TrstringerV1Client{client}, nil
+	return &ChendotjsV1Client{client}, nil
 }
 
-// NewForConfigOrDie creates a new TrstringerV1Client for the given config and
+// NewForConfigOrDie creates a new ChendotjsV1Client for the given config and
 // panics if there is an error in the config.
-func NewForConfigOrDie(c *rest.Config) *TrstringerV1Client {
+func NewForConfigOrDie(c *rest.Config) *ChendotjsV1Client {
 	client, err := NewForConfig(c)
 	if err != nil {
 		panic(err)
@@ -62,9 +62,9 @@ func NewForConfigOrDie(c *rest.Config) *TrstringerV1Client {
 	return client
 }
 
-// New creates a new TrstringerV1Client for the given RESTClient.
-func New(c rest.Interface) *TrstringerV1Client {
-	return &TrstringerV1Client{c}
+// New creates a new ChendotjsV1Client for the given RESTClient.
+func New(c rest.Interface) *ChendotjsV1Client {
+	return &ChendotjsV1Client{c}
 }
 
 func setConfigDefaults(config *rest.Config) error {
@@ -82,7 +82,7 @@ func setConfigDefaults(config *rest.Config) error {
 
 // RESTClient returns a RESTClient that is used to communicate
 // with API server by this client implementation.
-func (c *TrstringerV1Client) RESTClient() rest.Interface {
+func (c *ChendotjsV1Client) RESTClient() rest.Interface {
 	if c == nil {
 		return nil
 	}

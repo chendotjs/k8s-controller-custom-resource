@@ -9,7 +9,7 @@ An example of a custom Kubernetes controller that's only purpose is to watch for
 ## Running
 
 ```
-$ git clone https://github.com/trstringer/k8s-controller-custom-resource
+$ git clone https://github.com/chendotjs/k8s-controller-custom-resource
 $ cd k8s-controller-custom-resource
 $ go run *.go
 ```

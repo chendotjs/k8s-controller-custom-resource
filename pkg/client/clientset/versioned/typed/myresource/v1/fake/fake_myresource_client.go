@@ -19,22 +19,22 @@ limitations under the License.
 package fake
 
 import (
-	v1 "github.com/trstringer/k8s-controller-custom-resource/pkg/client/clientset/versioned/typed/myresource/v1"
+	v1 "github.com/chendotjs/k8s-controller-custom-resource/pkg/client/clientset/versioned/typed/myresource/v1"
 	rest "k8s.io/client-go/rest"
 	testing "k8s.io/client-go/testing"
 )
 
-type FakeTrstringerV1 struct {
+type FakeChendotjsV1 struct {
 	*testing.Fake
 }
 
-func (c *FakeTrstringerV1) MyResources(namespace string) v1.MyResourceInterface {
+func (c *FakeChendotjsV1) MyResources(namespace string) v1.MyResourceInterface {
 	return &FakeMyResources{c, namespace}
 }
 
 // RESTClient returns a RESTClient that is used to communicate
 // with API server by this client implementation.
-func (c *FakeTrstringerV1) RESTClient() rest.Interface {
+func (c *FakeChendotjsV1) RESTClient() rest.Interface {
 	var ret *rest.RESTClient
 	return ret
 }

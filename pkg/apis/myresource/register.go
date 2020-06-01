@@ -1,3 +1,3 @@
 package myresource
 
-const GroupName = "trstringer.com"
+const GroupName = "chendotjs.com"

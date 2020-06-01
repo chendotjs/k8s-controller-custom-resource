@@ -1,4 +1,4 @@
-apiVersion: trstringer.com/v1
+apiVersion: chendotjs.com/v1
 kind: MyResource
 metadata:
   name: example-myresource

@@ -19,7 +19,7 @@ limitations under the License.
 package fake
 
 import (
-	myresource_v1 "github.com/trstringer/k8s-controller-custom-resource/pkg/apis/myresource/v1"
+	myresource_v1 "github.com/chendotjs/k8s-controller-custom-resource/pkg/apis/myresource/v1"
 	v1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	labels "k8s.io/apimachinery/pkg/labels"
 	schema "k8s.io/apimachinery/pkg/runtime/schema"
@@ -30,13 +30,13 @@ import (
 
 // FakeMyResources implements MyResourceInterface
 type FakeMyResources struct {
-	Fake *FakeTrstringerV1
+	Fake *FakeChendotjsV1
 	ns   string
 }
 
-var myresourcesResource = schema.GroupVersionResource{Group: "trstringer.com", Version: "v1", Resource: "myresources"}
+var myresourcesResource = schema.GroupVersionResource{Group: "chendotjs.com", Version: "v1", Resource: "myresources"}
 
-var myresourcesKind = schema.GroupVersionKind{Group: "trstringer.com", Version: "v1", Kind: "MyResource"}
+var myresourcesKind = schema.GroupVersionKind{Group: "chendotjs.com", Version: "v1", Kind: "MyResource"}
 
 // Get takes name of the myResource, and returns the corresponding myResource object, and an error if there is any.
 func (c *FakeMyResources) Get(name string, options v1.GetOptions) (result *myresource_v1.MyResource, err error) {

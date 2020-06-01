@@ -12,8 +12,8 @@ import (
 	"k8s.io/client-go/tools/clientcmd"
 	"k8s.io/client-go/util/workqueue"
 
-	myresourceclientset "github.com/trstringer/k8s-controller-custom-resource/pkg/client/clientset/versioned"
-	myresourceinformer_v1 "github.com/trstringer/k8s-controller-custom-resource/pkg/client/informers/externalversions/myresource/v1"
+	myresourceclientset "github.com/chendotjs/k8s-controller-custom-resource/pkg/client/clientset/versioned"
+	myresourceinformer_v1 "github.com/chendotjs/k8s-controller-custom-resource/pkg/client/informers/externalversions/myresource/v1"
 )
 
 // retrieve the Kubernetes cluster client from outside of the cluster

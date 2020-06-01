@@ -19,8 +19,8 @@ limitations under the License.
 package v1
 
 import (
-	v1 "github.com/trstringer/k8s-controller-custom-resource/pkg/apis/myresource/v1"
-	scheme "github.com/trstringer/k8s-controller-custom-resource/pkg/client/clientset/versioned/scheme"
+	v1 "github.com/chendotjs/k8s-controller-custom-resource/pkg/apis/myresource/v1"
+	scheme "github.com/chendotjs/k8s-controller-custom-resource/pkg/client/clientset/versioned/scheme"
 	meta_v1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	types "k8s.io/apimachinery/pkg/types"
 	watch "k8s.io/apimachinery/pkg/watch"
@@ -53,7 +53,7 @@ type myResources struct {
 }
 
 // newMyResources returns a MyResources
-func newMyResources(c *TrstringerV1Client, namespace string) *myResources {
+func newMyResources(c *ChendotjsV1Client, namespace string) *myResources {
 	return &myResources{
 		client: c.RESTClient(),
 		ns:     namespace,

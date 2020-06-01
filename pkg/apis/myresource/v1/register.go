@@ -5,7 +5,7 @@ import (
 	"k8s.io/apimachinery/pkg/runtime"
 	"k8s.io/apimachinery/pkg/runtime/schema"
 
-	"github.com/trstringer/k8s-controller-custom-resource/pkg/apis/myresource"
+	"github.com/chendotjs/k8s-controller-custom-resource/pkg/apis/myresource"
 )
 
 // GroupVersion is the identifier for the API which includes

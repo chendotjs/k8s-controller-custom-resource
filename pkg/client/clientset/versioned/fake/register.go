@@ -19,7 +19,7 @@ limitations under the License.
 package fake
 
 import (
-	trstringerv1 "github.com/trstringer/k8s-controller-custom-resource/pkg/apis/myresource/v1"
+	chendotjsv1 "github.com/chendotjs/k8s-controller-custom-resource/pkg/apis/myresource/v1"
 	v1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	runtime "k8s.io/apimachinery/pkg/runtime"
 	schema "k8s.io/apimachinery/pkg/runtime/schema"
@@ -50,5 +50,5 @@ func init() {
 // After this, RawExtensions in Kubernetes types will serialize kube-aggregator types
 // correctly.
 func AddToScheme(scheme *runtime.Scheme) {
-	trstringerv1.AddToScheme(scheme)
+	chendotjsv1.AddToScheme(scheme)
 }

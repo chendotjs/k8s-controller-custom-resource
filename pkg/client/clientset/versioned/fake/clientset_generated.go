@@ -19,9 +19,9 @@ limitations under the License.
 package fake
 
 import (
-	clientset "github.com/trstringer/k8s-controller-custom-resource/pkg/client/clientset/versioned"
-	trstringerv1 "github.com/trstringer/k8s-controller-custom-resource/pkg/client/clientset/versioned/typed/myresource/v1"
-	faketrstringerv1 "github.com/trstringer/k8s-controller-custom-resource/pkg/client/clientset/versioned/typed/myresource/v1/fake"
+	clientset "github.com/chendotjs/k8s-controller-custom-resource/pkg/client/clientset/versioned"
+	chendotjsv1 "github.com/chendotjs/k8s-controller-custom-resource/pkg/client/clientset/versioned/typed/myresource/v1"
+	fakechendotjsv1 "github.com/chendotjs/k8s-controller-custom-resource/pkg/client/clientset/versioned/typed/myresource/v1/fake"
 	"k8s.io/apimachinery/pkg/runtime"
 	"k8s.io/apimachinery/pkg/watch"
 	"k8s.io/client-go/discovery"
@@ -70,12 +70,12 @@ func (c *Clientset) Discovery() discovery.DiscoveryInterface {
 
 var _ clientset.Interface = &Clientset{}
 
-// TrstringerV1 retrieves the TrstringerV1Client
-func (c *Clientset) TrstringerV1() trstringerv1.TrstringerV1Interface {
-	return &faketrstringerv1.FakeTrstringerV1{Fake: &c.Fake}
+// ChendotjsV1 retrieves the ChendotjsV1Client
+func (c *Clientset) ChendotjsV1() chendotjsv1.ChendotjsV1Interface {
+	return &fakechendotjsv1.FakeChendotjsV1{Fake: &c.Fake}
 }
 
-// Trstringer retrieves the TrstringerV1Client
-func (c *Clientset) Trstringer() trstringerv1.TrstringerV1Interface {
-	return &faketrstringerv1.FakeTrstringerV1{Fake: &c.Fake}
+// Chendotjs retrieves the ChendotjsV1Client
+func (c *Clientset) Chendotjs() chendotjsv1.ChendotjsV1Interface {
+	return &fakechendotjsv1.FakeChendotjsV1{Fake: &c.Fake}
 }
